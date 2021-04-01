@@ -8,6 +8,8 @@ let checkPipeline = ./jobs/check-rendered-pipeline-up-to-date.dhall
 
 let dhallFormat = ./jobs/dhall-format.dhall
 
+let cFormat = ./jobs/c-format.dhall
+
 let dhallLint = ./jobs/dhall-lint.dhall
 
 let dhallCheck = ./jobs/dhall-check.dhall
@@ -21,6 +23,7 @@ in  GitHubActions.Workflow::{
         { shellcheck
         , shfmt
         , dhallCheck
+        , cFormat
         , dhallFormat
         , dhallLint
         , checkPipeline

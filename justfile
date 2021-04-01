@@ -5,7 +5,9 @@ build: render-ci-pipeline
 render-ci-pipeline:
     ./scripts/render-ci-pipeline.sh
 
-format: format-dhall prettier format-shfmt
+fmt: format
+
+format: format-dhall prettier format-shfmt format-c
 
 lint: lint-dhall shellcheck
 
@@ -13,6 +15,9 @@ check: check-dhall
 
 prettier:
     yarn run prettier
+
+format-c:
+    ./scripts/c-format.sh
 
 format-dhall:
     ./scripts/dhall-format.sh
